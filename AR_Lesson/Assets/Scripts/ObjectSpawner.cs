@@ -20,12 +20,14 @@ public class ObjectSpawner : MonoBehaviour
     void Update()
     {
         //Create a raycast
+        Vector2 screenPos = m_camera.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
         List<ARRaycastHit> hits = new List<ARRaycastHit>();
+        m_ARRaycastManager.Raycast(screenPos, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
 
-        //if raycast hits something that is a AR plane spawn objcet
-        /**if(m_ARRaycastManager.Raycast(Input.GetTouch(0).position, hit))
+        if(hits.Count > 0 && Input.GetMouseButtonDown(0))
         {
-            GameObject clone = Instantiate(m_spawnablePrefab, transform.forward, Quaternion.identity);
-        }**/
+            var hitPose = hits[0].pose;
+            Instantiate(m_spawnablePrefab, hitPose.position, hitPose.rotation);
+        }
     }
 }
