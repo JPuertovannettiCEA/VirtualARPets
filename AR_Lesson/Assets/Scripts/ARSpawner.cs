@@ -17,11 +17,11 @@ public class ARSpawner : MonoBehaviour
     {
         if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            didHit = true; // enables walking
+            didHit = true; // Pet walking 
         }
         UpdatePlacementIndicator();
     }
-    void UpdatePlacementIndicator() // updates target pos with cam movement
+    void UpdatePlacementIndicator() // Updates target position with camera movement
     {
         if (placementPoseIsValid)
         {

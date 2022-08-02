@@ -4,7 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PetScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 1a10e704baa23d548811710e07610717, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 6f9063ceb81fdf6478e06c476fe5ce64, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6b26617736d60004fba50502cb7e9d44, type: 2}
